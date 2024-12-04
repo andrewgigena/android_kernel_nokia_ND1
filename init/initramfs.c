@@ -615,7 +615,9 @@ static int __init skip_initramfs_param(char *str)
 	do_skip_initramfs = 1;
 	return 1;
 }
-__setup("skip_initramfs", skip_initramfs_param);
+
+// Fix to use the kernel for recovery booting
+__setup("really_skip_initramfs", skip_initramfs_param);
 
 static int __init populate_rootfs(void)
 {
